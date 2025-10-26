@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call(UserSeeder::class);
+        $this->call(UserSeeder::class);
 
         Category::create([
             'name' => 'Laptop',
@@ -37,5 +37,7 @@ class DatabaseSeeder extends Seeder
             "image" => fake()->imageUrl(600, 600, 'laptop'),
             "price" => 1000,
         ]);
+
+
     }
 }

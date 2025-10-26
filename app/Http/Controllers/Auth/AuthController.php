@@ -34,7 +34,7 @@ class AuthController extends Controller
         $newUser['password'] = Hash::make($request->post('password'));
         // dd($newUser);
         $user = User::create($newUser);
-        $user->notify(new EmailVerificationNotification());
+        // $user->notify(new EmailVerificationNotification());
         $us = $user->refresh();
 
         return Helper::sendSuccess('please check your email to verify your email.', new RegistrationResource($us), 201);
